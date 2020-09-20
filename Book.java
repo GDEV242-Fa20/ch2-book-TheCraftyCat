@@ -79,12 +79,26 @@ class Book
     
     /**
      * Set the refNumber variable to hold the inputted value
+     * @input ref
      * 
-     * This satisfies exercise 2.88
+     * This satisfies exercise 2.88 and 2.90
      */
     public void setRefNumber(String ref)
     {
-        refNumber = ref;
+        // the following line satisfied exercise 2.88
+        // refNumber = ref;
+        
+        // the below lines modify the above to satisfy exercise 2.90
+        if (ref.length() < 3) //is input ref too short?
+        {
+            System.out.println("Error! Reference number must be at " +
+            "least 3 characters!");
+        }
+        
+        else // input ref is okay; assign to refNumber variable
+        {
+            refNumber = ref;
+        }
     }
     
     /**
