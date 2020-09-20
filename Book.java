@@ -110,12 +110,28 @@ class Book
     /**
      * Print the string holding the book's details to the terminal window
      * 
-     * This satisfies exercise 2.87
+     * This satisfies exercise 2.87 and 2.89
      */
     public void printDetails()
     {
-        System.out.println("Title: " + title + "\t" +
+        // this version satisfies exercise 2.87
+        // System.out.println("Title: " + title + "\t" +
+        // "Author: " + author + "\t" +
+        // "Pages: " + pages);
+        
+        // this version modified the above to satisfy exercise 2.89
+        System.out.print("Title: " + title + "\t" +
         "Author: " + author + "\t" +
-        "Pages: " + pages);
+        "Pages: " + pages + "\t");
+        
+        if (refNumber.length() > 0) //has refNumber been given a value?
+        {
+           System.out.print("Reference Number: " + refNumber + "\n");
+        }
+        
+        else // refNumber is a null string
+        {
+            System.out.print("Reference Number: " + "ZZZ" + "\n");
+        }
     }
 }
