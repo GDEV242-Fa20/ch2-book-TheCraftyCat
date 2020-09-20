@@ -1,3 +1,4 @@
+
 /**
  * A class that maintains information on a book.
  * This might form part of a larger application such
@@ -16,21 +17,30 @@ class Book
     private String title;
     // the pages field satisfies exercise 2.85
     private int pages;
+    // the courseText field satisfies exercise 2.92
+    private boolean courseText;
     // the refNumber field satisfies exercise 2.88
     private String refNumber;
+    // the borrowed field satisfies exercise 2.91
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, 
+    boolean usedForCourse)
     {
         author = bookAuthor;
         title = bookTitle;
         // the pages field satisfies exercise 2.85
         pages = bookPages;
+        // the courseText field satisfies exercise 2.92
+        courseText = usedForCourse;
         // the refNumber field satisfies exercise 2.88
         refNumber = "";
+        // the borrowed field satisfies exercise 2.91
+        borrowed = 0;
     }
 
     /**
@@ -78,6 +88,30 @@ class Book
     }
     
     /**
+     * Provide access to the int holding the book's number of times borrowed
+     * @return borrowed
+     * 
+     * This satisfies exercise 2.91
+     */
+    public int getBorrowed()
+    {
+        return borrowed;
+    }
+    
+    /**
+     * Provide access to the boolean holding the book's status
+     * true = yes, this book is a course text book
+     * false = no, this book is not used as a course text book
+     * @return courseText
+     * 
+     * This satisfies exercise 2.92
+     */
+    public boolean isCourseText()
+    {
+        return courseText;
+    }
+    
+    /**
      * Set the refNumber variable to hold the inputted value
      * @input ref
      * 
@@ -99,6 +133,17 @@ class Book
         {
             refNumber = ref;
         }
+    }
+    
+    /**
+     * This method mimics a patron borrowing the book from the library
+     * 
+     * This satisfies exercise 2.91
+     */
+    
+    public void borrow()
+    {
+        borrowed ++;
     }
     
     /**
@@ -124,7 +169,7 @@ class Book
     /**
      * Print the string holding the book's details to the terminal window
      * 
-     * This satisfies exercise 2.87 and 2.89
+     * This satisfies exercise 2.87, 2.89, and 2.91
      */
     public void printDetails()
     {
@@ -147,5 +192,9 @@ class Book
         {
             System.out.print("Reference Number: " + "ZZZ" + "\n");
         }
+        
+        // the following line satisfies exercise 2.91
+        System.out.println("This book has been borrowed " + 
+        borrowed + " times.");
     }
 }
