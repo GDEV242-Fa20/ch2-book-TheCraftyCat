@@ -4,7 +4,6 @@
  * This might form part of a larger application such
  * as a library system, for instance.
  *
- * @author Bill Crosbie
  * @modified by Catherine Oldfield
  * @for RVCC GDEV242 - Fall 2020
  * @textbook exercises 2.83 through 2.92, minus 2.86
